@@ -6,13 +6,14 @@ var CommentView = Backbone.View.extend ({
 		'click .comment_submit' : 'submitComment'
 	},
 
-	submitComment : function(event) {
+	submitComment: function(event) {
 		event.preventDefault();
 		
-	}
+	},
 
-	initialize: function(comment){
+	initialize: function(comment) {
 		this.render();
+		// console.log("initialize is functioning");
 	},
 
 	render: function (event) {

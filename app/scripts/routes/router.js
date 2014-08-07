@@ -2,7 +2,7 @@ var ThisRouter = Backbone.Router.extend({
 
 	routes: {
 		'' : 'search',
-		'comments' : 'comments'
+		'video/:id' : 'comments'
 	},
 
 	search: function() {
@@ -10,7 +10,7 @@ var ThisRouter = Backbone.Router.extend({
 		$(".commentScreen").hide();
 	},
 
-	comments: function () {
+	comments: function() {
 		$(".commentScreen").show();
 		$(".searchScreen").hide();
 	}

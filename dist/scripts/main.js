@@ -1,7 +1,11 @@
 var Comment = Backbone.Model.extend({
 
-	idAttribute: '_id'
+	idAttribute: '_id',
 
+	defaults: {
+		//hardcode a video id here, something like as follows
+		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	}
 });
 
 
@@ -20,13 +24,14 @@ var CommentView = Backbone.View.extend ({
 		'click .comment_submit' : 'submitComment'
 	},
 
-	submitComment : function(event) {
+	submitComment: function(event) {
 		event.preventDefault();
 		
-	}
+	},
 
-	initialize: function(comment){
+	initialize: function(comment) {
 		this.render();
+		console.log("initialize is functioning");
 	},
 
 	render: function (event) {
@@ -35,4 +40,26 @@ var CommentView = Backbone.View.extend ({
 
 })
 
+var ThisRouter = Backbone.Router.extend({
+
+	routes: {
+		'' : 'search',
+		'video/:id' : 'comments'
+	},
+
+	search: function() {
+		$(".searchScreen").show();
+		$(".commentScreen").hide();
+	},
+
+	comments: function() {
+		$(".commentScreen").show();
+		$(".searchScreen").hide();
+	}
+
+});
+var commentTemplate = _.template($("#comment_template").html());
+
+
+var commentValue = document.getElementById("comment_input").value;
 
