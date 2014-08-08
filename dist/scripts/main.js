@@ -31,7 +31,7 @@ var CommentView = Backbone.View.extend ({
 
 	initialize: function(comment) {
 		this.render();
-		console.log("initialize is functioning");
+		// console.log("initialize is functioning");
 	},
 
 	render: function (event) {
