@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -19,15 +19,15 @@
     <div class="hero-unit searchScreen">
         <h3>Upon Which Video Shall You Comment?</h3>
         <!--input video url-->
-<!--         <input class="urlInput" type="text" placeholder="Paste a YouTube video URL here"/>--> 
-        <input class="urlInput" type="text" value="Paste a YouTube video URL here"/>
+<!--         <input id="url_input" type="text" placeholder="Paste a YouTube video URL here"/>--> 
+        <input id="url_input" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
         <input type="submit" value="Search">
     </div>
 
     <div class="hero-unit commentScreen">
         <!--need to import video title from API-->
         <!--input for comment-->
-       <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here">asdf!</textarea>
+       <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
        <input type="submit" class="comment_submit">
         <!--field to display previously submitted comments-->
         <div class="commentsRendered"></div>
