@@ -5,9 +5,19 @@ var Comment = Backbone.Model.extend({
 	defaults: {
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+		author: "",
+		comment: "",
+		videoID: ""
+
 	}
 });
 
+firstComment = new Comment({
+	author: "someTroll",
+	comment: "This video is teh lamesauce!!",
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+})
 
 
 var CommentsPage = Backbone.Collection.extend({
@@ -91,28 +101,17 @@ var ThisRouter = Backbone.Router.extend({
 // 	});
 
 
-var commentList = [
-	{
-		id : 1,
-		comment : "Hello World"
-	},
 
-	{
-		id : 2,
-		comment: "Second comment"
-	},
-
-	{
-		id: 3,
-		comment: "Third!"
-	}
-];
 
 
 $(document).ready(function() {
 
 	$(".comment_submit").click(function(){
 		var commentValue = document.getElementById("comment_input").value;
-		$(".commentsRendered").prepend(commentValue);
+		$(".commentsRendered").before(commentValue);
 	});
 });
+
+
+
+

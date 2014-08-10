@@ -5,9 +5,19 @@ var Comment = Backbone.Model.extend({
 	defaults: {
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+		author: "",
+		comment: "",
+		videoID: ""
+
 	}
 });
 
+firstComment = new Comment({
+	author: "someTroll",
+	comment: "This video is teh lamesauce!!",
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+})
 
 
 var CommentsPage = Backbone.Collection.extend({
