@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$(".comment_submit").click(function(){
 		var commentValue = document.getElementById("comment_input").value;
 		var newComment = new Comment ({
-			"comment" : ("comment_input").value
+			"comment" : document.getElementById("comment_input").value
 		});
 		// $(".commentsRendered").prepend("<div class='commentHolder'>" + commentValue + "</div>");
 
