@@ -12,6 +12,12 @@ var Comment = Backbone.Model.extend({
 		date: "",
 		timestamp: "",
 
+	},
+
+		initialize:function(){
+			var comment = this.get('comment');
+			console.log(comment + ' seems to be initialized.');
+			$(".commentsRendered").prepend(comment)
 	}
 });
 
@@ -23,7 +29,7 @@ firstComment = new Comment({
 	date: "August 4, 2014",
 	timestamp: "1:04 AM"
 
-})
+});
 
 
 var CommentsPage = Backbone.Collection.extend({
