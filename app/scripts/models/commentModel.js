@@ -6,17 +6,23 @@ var Comment = Backbone.Model.extend({
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
+		videoID: "",
 		author: "",
 		comment: "",
-		videoID: ""
+		date: "",
+		timestamp: "",
 
 	}
 });
 
 firstComment = new Comment({
+
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 	author: "someTroll",
 	comment: "This video is teh lamesauce!!",
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	date: "August 4, 2014",
+	timestamp: "1:04 AM"
+
 })
 
 

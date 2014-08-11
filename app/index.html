@@ -38,16 +38,10 @@
        <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
        <input type="submit" class="comment_submit">
         <!--field to display previously submitted comments-->
+
+        <script>
         <div class="commentsRendered"></div>
-
-
-    <script type="text/template" id="comment_template">
-        <% _.each(comments, function(comment){ %>
-            <div>
-                <div><p><%=comment%></p></div>
-            </div>
-        <% }) %>
-    </script>
+        </script>
 
 
     </div>    
