@@ -21,16 +21,6 @@ var Comment = Backbone.Model.extend({
 	}
 });
 
-// firstComment = new Comment({
-
-// 	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-// 	author: "someTroll",
-// 	comment: "This video is teh lamesauce!!",
-// 	date: "August 4, 2014",
-// 	timestamp: "1:04 AM"
-
-// });
-
 
 var CommentsPage = Backbone.Collection.extend({
 

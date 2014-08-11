@@ -1,4 +1,37 @@
 
+
+//Some sample comments
+var firstComment = new Comment({
+
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	author: "someTroll",
+	comment: "This video is teh lamesauce!!",
+	date: "August 4, 2014",
+	timestamp: "1:04 AM"
+
+});
+
+var secondComment = new Comment({
+
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	author: "SHOOPtheWOOP",
+	comment: "luv dis vido THXXXXX",
+	date: "August 5, 2014",
+	timestamp: "9:15 AM"
+
+});
+
+var thirdComment = new Comment({
+
+	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	author: "all_the_good_names_were_taken",
+	comment: "Anybody want to start a flame war?",
+	date: "August 5, 2014",
+	timestamp: "10:57 AM"
+
+});
+
+
 //Underscore's documentation:
 var compiled = _.template("hello: <%= name %>");
 compiled({name: 'moe'});
