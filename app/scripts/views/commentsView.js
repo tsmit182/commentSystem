@@ -1,6 +1,6 @@
 var CommentView = Backbone.View.extend ({
 
-	el: '.commentScreen',
+	el: $('.commentScreen'),
 
 	events: {
 		'click .comment_submit' : 'submitComment'

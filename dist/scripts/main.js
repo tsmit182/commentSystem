@@ -12,18 +12,24 @@ var Comment = Backbone.Model.extend({
 		date: "",
 		timestamp: "",
 
+	},
+
+		initialize:function(){
+			var comment = this.get('comment');
+			console.log(comment + ' seems to be initialized.');
+			$(".commentsRendered").prepend(comment)
 	}
 });
 
-firstComment = new Comment({
+// firstComment = new Comment({
 
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-	author: "someTroll",
-	comment: "This video is teh lamesauce!!",
-	date: "August 4, 2014",
-	timestamp: "1:04 AM"
+// 	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+// 	author: "someTroll",
+// 	comment: "This video is teh lamesauce!!",
+// 	date: "August 4, 2014",
+// 	timestamp: "1:04 AM"
 
-})
+// });
 
 
 var CommentsPage = Backbone.Collection.extend({
@@ -32,9 +38,11 @@ var CommentsPage = Backbone.Collection.extend({
 	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtubeCommentSystem"
 
 });
+
+var collectionInstance = new CommentsPage();
 var CommentView = Backbone.View.extend ({
 
-	el: '.commentScreen',
+	el: $('.commentScreen'),
 
 	events: {
 		'click .comment_submit' : 'submitComment'
@@ -79,6 +87,6 @@ $(document).ready(function() {
 //prepending the comment on click of 'submit'
 	$(".comment_submit").click(function(){
 		var commentValue = document.getElementById("comment_input").value;
-		$(".commentsRendered").prepend(commentValue);
+		$(".commentsRendered").prepend("<div class='commentHolder'>" + commentValue + "</div>");
 	});
 });

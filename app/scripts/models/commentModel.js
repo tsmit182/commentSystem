@@ -21,15 +21,15 @@ var Comment = Backbone.Model.extend({
 	}
 });
 
-firstComment = new Comment({
+// firstComment = new Comment({
 
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-	author: "someTroll",
-	comment: "This video is teh lamesauce!!",
-	date: "August 4, 2014",
-	timestamp: "1:04 AM"
+// 	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+// 	author: "someTroll",
+// 	comment: "This video is teh lamesauce!!",
+// 	date: "August 4, 2014",
+// 	timestamp: "1:04 AM"
 
-});
+// });
 
 
 var CommentsPage = Backbone.Collection.extend({
@@ -38,3 +38,5 @@ var CommentsPage = Backbone.Collection.extend({
 	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtubeCommentSystem"
 
 });
+
+var collectionInstance = new CommentsPage();
