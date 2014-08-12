@@ -12,4 +12,12 @@ $(document).ready(function() {
 	});
 });
 
-collectionInstance.fetch();
+// collectionInstance.fetch();
+
+//pulling the comments from the server
+
+	collectionInstance.fetch();
+	//need to allow previous .fetch() to run before assigning the following variables
+	var grouped = collectionInstance.groupBy('videoID');
+	var aCommentIsThis = grouped.dQw4w9WgXcQ[1].attributes.comment
+	$(".commentsRendered").prepend(aCommentIsThis)

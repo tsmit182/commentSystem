@@ -6,7 +6,7 @@ var Comment = Backbone.Model.extend({
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
-		videoID: "",
+		videoID: "gkTb9GP9lVI",
 		author: "",
 		comment: "",
 		date: "",
@@ -15,9 +15,10 @@ var Comment = Backbone.Model.extend({
 	},
 
 		initialize:function(){
-			var comment = this.get('comment');
-			console.log(comment + ' seems to be initialized.');
-			$(".commentsRendered").prepend(comment)
+				//Commented out while working on loading comments from a specific video
+			// var comment = this.get('comment');
+			// // console.log(comment + ' seems to be initialized.');
+			// $(".commentsRendered").prepend(comment)
 	}
 });
 
@@ -25,7 +26,7 @@ var Comment = Backbone.Model.extend({
 var CommentsPage = Backbone.Collection.extend({
 
 	model: Comment,
-	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtubeCommentSystem"
+	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtube2"
 
 });
 
@@ -74,11 +75,11 @@ var ThisRouter = Backbone.Router.extend({
 });
 
 $(document).ready(function() {
-//prepending the comment on click of 'submit'
 	$(".comment_submit").click(function(){
 		var commentValue = document.getElementById("comment_input").value;
+		//makes the input content into a new instance of `Comment`
 		var newComment = new Comment ({
-			"comment" : ("comment_input").value
+			"comment" : document.getElementById("comment_input").value
 		});
 		// $(".commentsRendered").prepend("<div class='commentHolder'>" + commentValue + "</div>");
 
@@ -86,3 +87,12 @@ $(document).ready(function() {
 	});
 });
 
+// collectionInstance.fetch();
+
+//pulling the comments from the server
+
+	collectionInstance.fetch();
+	//need to allow previous .fetch() to run before assigning the following variables
+	var grouped = collectionInstance.groupBy('videoID');
+	var aCommentIsThis = grouped.dQw4w9WgXcQ[1].attributes.comment
+	$(".commentsRendered").prepend(aCommentIsThis)

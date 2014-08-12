@@ -1,9 +1,18 @@
 
+//Darude-Sandstorm
+4ZXPP7qMSz4
+//Never Gonna Give You Up
+dQw4w9WgXcQ
+//The Best of Bach
+6JQm5aSjX6g
+//Troll Song
+gkTb9GP9lVI
+
 
 //Some sample comments
 var firstComment = new Comment({
 
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	videoID: "dQw4w9WgXcQ",
 	author: "someTroll",
 	comment: "This video is teh lamesauce!!",
 	date: "August 4, 2014",
@@ -13,7 +22,7 @@ var firstComment = new Comment({
 
 var secondComment = new Comment({
 
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	videoID: "dQw4w9WgXcQ",
 	author: "SHOOPtheWOOP",
 	comment: "luv dis vido THXXXXX",
 	date: "August 5, 2014",
@@ -26,7 +35,7 @@ collectionInstance.add(secondComment).save()
 
 var thirdComment = new Comment({
 
-	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	videoID: "dQw4w9WgXcQ",
 	author: "all_the_good_names_were_taken",
 	comment: "Anybody want to start a flame war?",
 	date: "August 5, 2014",
