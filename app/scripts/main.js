@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
-//prepending the comment on click of 'submit'
 	$(".comment_submit").click(function(){
 		var commentValue = document.getElementById("comment_input").value;
+		//makes the input content into a new instance of `Comment`
 		var newComment = new Comment ({
 			"comment" : document.getElementById("comment_input").value
 		});
@@ -12,3 +12,4 @@ $(document).ready(function() {
 	});
 });
 
+collectionInstance.fetch();

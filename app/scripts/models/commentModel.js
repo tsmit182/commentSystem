@@ -6,7 +6,7 @@ var Comment = Backbone.Model.extend({
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
-		videoID: "",
+		videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		author: "",
 		comment: "",
 		date: "",
@@ -16,7 +16,7 @@ var Comment = Backbone.Model.extend({
 
 		initialize:function(){
 			var comment = this.get('comment');
-			console.log(comment + ' seems to be initialized.');
+			// console.log(comment + ' seems to be initialized.');
 			$(".commentsRendered").prepend(comment)
 	}
 });
@@ -25,7 +25,7 @@ var Comment = Backbone.Model.extend({
 var CommentsPage = Backbone.Collection.extend({
 
 	model: Comment,
-	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtubeCommentSystem"
+	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtube1"
 
 });
 

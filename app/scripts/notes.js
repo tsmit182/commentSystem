@@ -21,6 +21,9 @@ var secondComment = new Comment({
 
 });
 
+//This adds `secondComment` to the collection then saves the collection to the specified server
+collectionInstance.add(secondComment).save()
+
 var thirdComment = new Comment({
 
 	videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",

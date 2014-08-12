@@ -26,10 +26,14 @@
     <!--view for inputting video url-->
     <div class="hero-unit searchScreen">
         <h3>Upon Which Video Shall You Comment?</h3>
+        <br />
+        <p>To choose a forum for a video paste the end of the URL here:</p>
         <!--input video url-->
 <!--         <input id="url_input" type="text" placeholder="Paste a YouTube video URL here"/>--> 
+        <p>(everything after "https://www.youtube.com/watch?v=")</p>
         <input id="url_input" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
         <input type="submit" value="Search">
+
     </div>
 
     <div class="hero-unit commentScreen">
@@ -37,10 +41,12 @@
         <!--input for comment-->
        <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
        <input type="submit" class="comment_submit">
-        <!--field to display previously submitted comments-->
+       <br /><br />
 
-        
+
+        <!--field to display previously submitted comments-->
         <div class="commentsRendered"></div>
+
 
 
 

@@ -15,13 +15,23 @@ body {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 6px;
   padding: 60px;
   h1 {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    color: black;
+  }
+  h3 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: auto;
+  }
+  p {
+    color: black;
   }
 }
 
@@ -32,6 +42,7 @@ body {
 .commentsRendered {
 border: 1px dashed;
 min-height: 1em;
+background-color: white;
 }
 
 .commentHolder {
