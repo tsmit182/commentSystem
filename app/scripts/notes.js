@@ -88,3 +88,7 @@ var commentList = [
 
 // The following takes the attributes of previously defined "firstComment" and prepends them
 		$(".commentsRendered").prepend(firstComment.attributes.comment);
+
+
+	//
+	var grouped = collectionInstance.groupBy('videoID');

@@ -16,8 +16,11 @@ $(document).ready(function() {
 
 //pulling the comments from the server
 
-	collectionInstance.fetch();
+
+collectionInstance.fetch().done(function() {
 	//need to allow previous .fetch() to run before assigning the following variables
+
 	var grouped = collectionInstance.groupBy('videoID');
-	var aCommentIsThis = grouped.dQw4w9WgXcQ[1].attributes.comment
-	$(".commentsRendered").prepend(aCommentIsThis)
+	var aCommentIsThis = grouped.gkTb9GP9lVI[3].attributes.comment
+	$(".commentsRendered").prepend(aCommentIsThis);
+});
