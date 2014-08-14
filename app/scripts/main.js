@@ -18,9 +18,20 @@ $(document).ready(function() {
 
 
 collectionInstance.fetch().done(function() {
-	//need to allow previous .fetch() to run before assigning the following variables
+	// var grouped = collectionInstance.groupBy('videoID');
+	// var aCommentIsThis = grouped.gkTb9GP9lVI[3].attributes.comments
+	// $(".commentsRendered").prepend(aCommentIsThis);
 
-	var grouped = collectionInstance.groupBy('videoID');
-	var aCommentIsThis = grouped.gkTb9GP9lVI[3].attributes.comment
-	$(".commentsRendered").prepend(aCommentIsThis);
+	var video = collectionInstance.where({videoID: "4ZXPP7qMSz4"});
+	// $(".commentsRendered").prepend(video.attributes);
+	// console.log(video);
+
+	for (var i in video) {
+	  var com = video[i];
+	  $(".commentsRendered").prepend(com.attributes.comment)};
+
+
+	//need to loop through the arrays in `video` and spit out the comment data
+
 });
+
