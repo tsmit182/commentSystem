@@ -1,3 +1,4 @@
+//Creating a router constructor
 var ThisRouter = Backbone.Router.extend({
 
 	routes: {
@@ -5,14 +6,19 @@ var ThisRouter = Backbone.Router.extend({
 		'video/:id' : 'comments'
 	},
 
+//the route in which my search shall go
 	search: function() {
 		$(".searchScreen").show();
 		$(".commentScreen").hide();
 	},
 
-	comments: function() {
+//the route in which comments shall go
+	comments: function(id) {
 		$(".commentScreen").show();
 		$(".searchScreen").hide();
 	}
 
 });
+
+//creating an instance of my router
+var route = new ThisRouter();

@@ -32,12 +32,15 @@
          <input id="url_input" type="text" placeholder="example: dQw4w9WgXcQ"/> 
         <p>(everything after "https://www.youtube.com/watch?v=")</p>
 <!--         <input id="url_input" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
- -->        <input type="submit" value="Search">
+ -->        <input id="videoFind" type="submit" value="Go!">
 
     </div>
 
     <div class="hero-unit commentScreen">
         <!--need to import video title from API-->
+        <p>Choose a different video?</p>
+        <input id="findNewVideo" type="submit" value="Go!">
+        <br /><br />
         <!--input for comment-->
        <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
        <input type="submit" class="comment_submit">
@@ -65,7 +68,7 @@
         <script src="scripts/models/commentModel.js"></script>
         <script src="scripts/views/commentsView.js"></script>
         <script src="scripts/views/searchView.js"></script>
-        <!-- <script src="scripts/routes/router.js"></script>-->
+        <script src="scripts/routes/router.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
