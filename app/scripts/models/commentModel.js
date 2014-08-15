@@ -10,7 +10,7 @@ var Comment = Backbone.Model.extend({
 		author: "",
 		comment: "",
 		date: "",
-		timestamp: "",
+		timestamp: ""
 
 	},
 
