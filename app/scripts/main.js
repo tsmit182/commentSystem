@@ -1,16 +1,28 @@
 $(document).ready(function(){
 	//load the page with the `search` route showing
 	route.search();
-	$("#videoFind").click(function(){
-		route.comments();
-	});
+	collectionInstance.fetch().done(function(){
+		$("#videoFind").click(function(){
+			var urlValue = $('#url_input').val();
+			var video = collectionInstance.where({videoID: urlValue});
 
+								//loop through `video` array, pull & append comment values:
+			//the loop is going to run for each `i` in the `video` array
+			for (var i in video) {
+			//assigning a variable for "for each object in this video"
+	  	var com = video[i];
+		  //pull each comment with `com.attributes.comment`, put it in a div, and append it to `.commentsRendered` 
+		  $(".commentsRendered").append("<div class='commentHolder'>" + com.attributes.comment + "</div>")};
+		  route.comments();
+		});
+	});
 });
 
 
 //when my document is ready, run the code inside the curly brackets
 $(document).ready(function() {
 		$("#findNewVideo").click(function(){
+			$('.commentsRendered').empty();
 			route.search();
 		});
 	//when `.comment_submit` is clicked, run the code inside the curly brackets
@@ -33,24 +45,21 @@ $(document).ready(function() {
 });
 
 
-//pulling the comments from the server:
+// //pulling the comments from the server:
 
-//when the collection instance is done being fetched from the server, run the code inside the curly brackets
-collectionInstance.fetch().done(function() {
+// //when the collection instance is done being fetched from the server, run the code inside the curly brackets
+// collectionInstance.fetch().done(function() {
+// 	//assign a variable for a `collectionInstance` manually sorted by a videoID
+// 	var video = collectionInstance.where({videoID: "dQw4w9WgXcQ"});
 
-	//jQuery nabs the urlValue from the input field `#url_input`
-	var urlValue = $('#url_input').val();
-	//assign a variable for a `collectionInstance` sorted by a videoID
-	var video = collectionInstance.where({videoID: urlValue});
+// 	//loop through `video` array, pull & append comment values:
+// 		//the loop is going to run for each `i` in the `video` array
+// 	for (var i in video) {
+// 		//assigning a variable for "for each object in this video"
+// 	  var com = video[i];
+// 	  //pull each comment with `com.attributes.comment`, put it in a div, and append it to `.commentsRendered` 
+// 	  $(".commentsRendered").append("<div class='commentHolder'>" + com.attributes.comment + "</div>")};
 
-	//loop through `video` array, pull & append comment values:
-		//the loop is going to run for each `i` in the `video` array
-	for (var i in video) {
-		//assigning a variable for "for each object in this video"
-	  var com = video[i];
-	  //pull each comment with `com.attributes.comment`, put it in a div, and append it to `.commentsRendered` 
-	  $(".commentsRendered").append("<div class='commentHolder'>" + com.attributes.comment + "</div>")};
-
-});
+// });
 
 

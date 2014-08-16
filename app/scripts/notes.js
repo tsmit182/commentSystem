@@ -10,6 +10,14 @@ gkTb9GP9lVI
 
 
 
+//
+	$("videoFind").click(function(){
+	//jQuery nabs the urlValue from the input field `#url_input`
+	var urlValue = $('#url_input').val();
+	//assign a variable for a `collectionInstance` sorted by a videoID
+	var video = collectionInstance.where({videoID: urlValue});
+	});
+
 
 
 //maybe something like this for the routes. but i'm gonna try a different approach.
