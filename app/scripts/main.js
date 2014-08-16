@@ -1,11 +1,13 @@
 $(document).ready(function(){
 	//load the page with the `search` route showing
 	route.search();
+	//when this instance of a collection is fetched, run the following parameter code
 	collectionInstance.fetch().done(function(){
+		//when the #videoFind button is clicked, run its parameters	
 		$("#videoFind").click(function(){
-			
+			//assign a variable to the user-input text in the #url_input field
 			var urlValue = $('#url_input').val();
-			
+			//assign a variable to the collection, where the collection's videoID equals the input URL value
 			var video = collectionInstance.where({videoID: urlValue});
 
 		//loop through `video` array, pull & append comment values:
@@ -23,18 +25,22 @@ $(document).ready(function(){
 
 //when my document is ready, run the code inside the curly brackets
 $(document).ready(function() {
+		//when user clicks #findNewVideo button, the next two lines are run
 		$("#findNewVideo").click(function(){
+			//empties `.commentsRendered` div
 			$('.commentsRendered').empty();
+			//returns user to search route
 			route.search();
 		});
 	//when `.comment_submit` is clicked, run the code inside the curly brackets
 		$(".comment_submit").click(function(){
 		//assigning `commentValue` the user-input value of the `#comment_input` textarea
 		var commentValue = document.getElementById("comment_input").value;
+
 //making the input content into a new instance of `Comment`:
 		//creating the instance:
 		var newComment = new Comment ({
-			//pulling it from `#comment_input`
+			//pulling the comment and videoID values from `#comment_input` and (occluded) `#url_input`
 			"comment" : document.getElementById("comment_input").value,
 			"videoID" : document.getElementById("url_input").value
 		});
