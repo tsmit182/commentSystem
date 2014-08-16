@@ -9,6 +9,19 @@ dQw4w9WgXcQ
 gkTb9GP9lVI
 
 
+
+
+
+//maybe something like this for the routes. but i'm gonna try a different approach.
+		urlRoute = new ThisRouter ({
+		comments: function(id) {
+		$(".commentScreen").show();
+		$(".searchScreen").hide();
+		}
+	});
+
+
+
 //Some sample comments
 var firstComment = new Comment({
 

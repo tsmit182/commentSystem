@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	//load the page with the `search` route showing
-		route.search();
-		$("#videoFind").click(function(){
-			route.comments();
-		})
+	route.search();
+	$("#videoFind").click(function(){
+		route.comments();
+	});
+
 });
 
 
@@ -36,8 +37,11 @@ $(document).ready(function() {
 
 //when the collection instance is done being fetched from the server, run the code inside the curly brackets
 collectionInstance.fetch().done(function() {
-	//assign a variable for a `collectionInstance` manually sorted by a videoID
-	var video = collectionInstance.where({videoID: "dQw4w9WgXcQ"});
+
+	//jQuery nabs the urlValue from the input field `#url_input`
+	var urlValue = $('#url_input').val();
+	//assign a variable for a `collectionInstance` sorted by a videoID
+	var video = collectionInstance.where({videoID: urlValue});
 
 	//loop through `video` array, pull & append comment values:
 		//the loop is going to run for each `i` in the `video` array
