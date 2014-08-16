@@ -3,10 +3,12 @@ $(document).ready(function(){
 	route.search();
 	collectionInstance.fetch().done(function(){
 		$("#videoFind").click(function(){
+			
 			var urlValue = $('#url_input').val();
+			
 			var video = collectionInstance.where({videoID: urlValue});
 
-								//loop through `video` array, pull & append comment values:
+		//loop through `video` array, pull & append comment values:
 			//the loop is going to run for each `i` in the `video` array
 			for (var i in video) {
 			//assigning a variable for "for each object in this video"
@@ -33,7 +35,8 @@ $(document).ready(function() {
 		//creating the instance:
 		var newComment = new Comment ({
 			//pulling it from `#comment_input`
-			"comment" : document.getElementById("comment_input").value
+			"comment" : document.getElementById("comment_input").value,
+			"videoID" : document.getElementById("url_input").value
 		});
 			//adding the comment instance as soon as it's submitted (since it won't be pulled from the server until the next load)
 		$(".commentsRendered").prepend("<div class='commentHolder'>" + commentValue + "</div>");

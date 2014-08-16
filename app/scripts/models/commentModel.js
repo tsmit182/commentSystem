@@ -6,7 +6,8 @@ var Comment = Backbone.Model.extend({
 		//hardcode a video id here, something like as follows
 		// videoID: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
-		videoID: "dQw4w9WgXcQ",
+		// videoID: "dQw4w9WgXcQ",
+		videoID: "",
 		author: "",
 		comment: "",
 		date: "",
