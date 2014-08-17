@@ -65,6 +65,7 @@ var ThisRouter = Backbone.Router.extend({
 
 //creating an instance of my router
 var route = new ThisRouter();
+//when my document is ready, run the code inside the curly brackets
 $(document).ready(function(){
 	//load the page with the `search` route showing
 	route.search();
@@ -74,8 +75,10 @@ $(document).ready(function(){
 		$("#videoFind").click(function(){
 			//assign a variable to the user-input text in the #url_input field
 			var urlValue = $('#url_input').val();
+			//use RegEx to remove the url before video ID 
+			var truncVidID = urlValue.replace(/https:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
-			var video = collectionInstance.where({videoID: urlValue});
+			var video = collectionInstance.where({videoID: truncVidID});
 
 		//loop through `video` array, pull & append comment values:
 			//the loop is going to run for each `i` in the `video` array
@@ -107,10 +110,12 @@ $(document).ready(function() {
 //making the input content into a new instance of `Comment`:
 		//creating the instance:
 		var newComment = new Comment ({
-			//pulling the comment and videoID values from `#comment_input` and (occluded) `#url_input`
+			//pulling the comment value from `#comment_input`
 			"comment" : document.getElementById("comment_input").value,
-			"videoID" : document.getElementById("url_input").value
+			//pulling the input from occluded `#url_input` and then truncating it to only the video ID using regular expressions
+			"videoID" : document.getElementById("url_input").value.replace(/https:\/\/www.youtube.com\/watch\?v=/, "")
 		});
+
 			//adding the comment instance as soon as it's submitted (since it won't be pulled from the server until the next load)
 		$(".commentsRendered").prepend("<div class='commentHolder'>" + commentValue + "</div>");
 			//adding the comment instance to the server and saving it
@@ -119,23 +124,3 @@ $(document).ready(function() {
 		$("#comment_input").val('');
 	});
 });
-
-
-// //pulling the comments from the server:
-
-// //when the collection instance is done being fetched from the server, run the code inside the curly brackets
-// collectionInstance.fetch().done(function() {
-// 	//assign a variable for a `collectionInstance` manually sorted by a videoID
-// 	var video = collectionInstance.where({videoID: "dQw4w9WgXcQ"});
-
-// 	//loop through `video` array, pull & append comment values:
-// 		//the loop is going to run for each `i` in the `video` array
-// 	for (var i in video) {
-// 		//assigning a variable for "for each object in this video"
-// 	  var com = video[i];
-// 	  //pull each comment with `com.attributes.comment`, put it in a div, and append it to `.commentsRendered` 
-// 	  $(".commentsRendered").append("<div class='commentHolder'>" + com.attributes.comment + "</div>")};
-
-// });
-
-

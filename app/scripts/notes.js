@@ -9,6 +9,18 @@ gkTb9GP9lVI
 
 
 
+//REGEX
+//"https://www.youtube.com/watch?v=yzI00jEaJ4Q"
+//my regex should end up being something like this (which isn't functional):
+urlValue.replace(/https:\/\/www.youtube.com\/watch?v=/, "");
+
+//the following removes the "http://" from the url
+urlValue.replace(/https:\/\//, "");
+//this replaces everything up until the question mark
+urlValue.replace(/https:\/\/www.youtube.com\/watch/, "");
+//you gotta escape!
+urlValue.replace(/https:\/\/www.youtube.com\/watch\?v=/, "");
+
 //
 	$("videoFind").click(function(){
 	//jQuery nabs the urlValue from the input field `#url_input`
