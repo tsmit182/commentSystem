@@ -12,7 +12,7 @@ $(document).ready(function(){
 			var truncVidID = urlValue.replace(/https:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
 			var video = collectionInstance.where({videoID: truncVidID});
-
+			route.navigate("");
 		//loop through `video` array, pull & append comment values:
 			//the loop is going to run for each `i` in the `video` array
 			for (var i in video) {
@@ -28,6 +28,7 @@ $(document).ready(function(){
 
 //when my document is ready, run the code inside the curly brackets
 $(document).ready(function() {
+
 		//when user clicks #findNewVideo button, the next two lines are run
 		$("#findNewVideo").click(function(){
 			//empties `.commentsRendered` div
