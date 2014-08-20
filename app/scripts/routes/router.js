@@ -9,14 +9,19 @@ var ThisRouter = Backbone.Router.extend({
 
 //the route in which my search shall go
 	search: function() {
-		$(".searchScreen").show();
-		$(".commentScreen").hide();
-	
-		$("#videoFind").click(function(){
-			var urlValue = document.getElementById("url_input").value.replace(/https:\/\/www.youtube.com\/watch\?v=/, "")
-			console.log(urlValue);
-			route.navigate();
-		});
+		// $(".searchScreen").show();
+		// $(".commentScreen").hide();
+			
+		var searchview = new SearchView();
+		$('.hero-unit').html(myview.el);
+
+
+
+		// $("#videoFind").click(function(){
+		// 	var urlValue = document.getElementById("url_input").value.replace(/https:\/\/www.youtube.com\/watch\?v=/, "")
+		// 	console.log(urlValue);
+		// 	route.navigate();
+		// });
 	},
 
 //the route in which comments shall go
@@ -34,3 +39,5 @@ var ThisRouter = Backbone.Router.extend({
 
 //creating an instance of my router
 var route = new ThisRouter();
+
+Backbone.history.start();
