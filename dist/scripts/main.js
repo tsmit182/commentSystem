@@ -76,7 +76,7 @@ $(document).ready(function(){
 			//assign a variable to the user-input text in the #url_input field
 			var urlValue = $('#url_input').val();
 			//use RegEx to remove the url before video ID 
-			var truncVidID = urlValue.replace(/https:\/\/www.youtube.com\/watch\?v=/, "");
+			var truncVidID = urlValue.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
 			var video = collectionInstance.where({videoID: truncVidID});
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
 			//pulling the comment value from `#comment_input`
 			"comment" : document.getElementById("comment_input").value,
 			//pulling the input from occluded `#url_input` and then truncating it to only the video ID using regular expressions
-			"videoID" : document.getElementById("url_input").value.replace(/https:\/\/www.youtube.com\/watch\?v=/, "")
+			"videoID" : document.getElementById("url_input").value.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "")
 		});
 
 			//adding the comment instance as soon as it's submitted (since it won't be pulled from the server until the next load)

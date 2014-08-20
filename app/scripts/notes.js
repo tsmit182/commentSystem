@@ -6,7 +6,16 @@ dQw4w9WgXcQ
 6JQm5aSjX6g
 //Troll Song
 gkTb9GP9lVI
+//a'splodey whale
+1_t44siFyb4
 
+<video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
+  Your browser does not support the <code>video</code> element.
+</video>
+
+'http://gdata.youtube.com/feeds/api/videos/1_t44siFyb4?v=2&amp;alt=json-in-script&amp;callback='
+
+'http://gdata.youtube.com/feeds/api/videos/' + '?v=2&alt=json-in-script&format=5&callback=getTitle'
 
 
 "https://developers.google.com/youtube/v3/"
@@ -22,6 +31,7 @@ urlValue.replace(/https:\/\//, "");
 urlValue.replace(/https:\/\/www.youtube.com\/watch/, "");
 //you gotta escape!
 urlValue.replace(/https:\/\/www.youtube.com\/watch\?v=/, "");
+urlValue.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "")
 
 //
 	$("videoFind").click(function(){
