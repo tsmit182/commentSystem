@@ -12,6 +12,8 @@ $(document).ready(function(){
 			var truncVidID = urlValue.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
 			
+
+			$('.vidGoesHere').empty();
 			//adding streaming video 
 			$('.vidGoesHere').append("<iframe width='420' height='345' src='http://www.youtube.com/embed/" + truncVidID + "'></iframe>");
 
