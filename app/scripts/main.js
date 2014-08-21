@@ -13,9 +13,20 @@ $(document).ready(function(){
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
 			
 
+			// if ($('#url_input').val() == ('')) {
+			// 	$('.vidGoesHere').empty();
+			// }
+
+
+			//if a video has already been loaded, remove it from `.vidGoesHere`
 			$('.vidGoesHere').empty();
 			//adding streaming video 
 			$('.vidGoesHere').append("<iframe width='420' height='345' src='http://www.youtube.com/embed/" + truncVidID + "'></iframe>");
+
+			if ($('#url_input').val() == ('')) {
+				$('.vidGoesHere').empty();
+				$('.vidGoesHere').append("<p>Looks like you didn't submit a valid URL.</p>")
+			}
 
 			//assigning a variable to be looped over
 			var video = collectionInstance.where({videoID: truncVidID});
