@@ -23,9 +23,16 @@ $(document).ready(function(){
 			//adding streaming video 
 			$('.vidGoesHere').append("<iframe width='420' height='345' src='http://www.youtube.com/embed/" + truncVidID + "'></iframe>");
 
-			if ($('#url_input').val() == ('')) {
+			if ($('#url_input').val() === '') {
 				$('.vidGoesHere').empty();
-				$('.vidGoesHere').append("<p>Looks like you didn't submit a valid URL.</p>")
+				$('.commentsRendered').hide();
+				$('#comment_input').hide();
+				$('.comment_submit').hide();
+				$('.vidGoesHere').append("<p class='disappointment'>Looks like you didn't submit a valid URL. Try again?</p>");
+			} else {
+				$('.commentsRendered').show();
+				$('#comment_input').show();
+				$('.comment_submit').show();				
 			}
 
 			//assigning a variable to be looped over
@@ -49,6 +56,7 @@ $(document).ready(function() {
 		$("#findNewVideo").click(function(){
 			//empties `.commentsRendered` div
 			$('.commentsRendered').empty();
+			$('#url_input').val('');
 			//returns user to search route
 			route.search();
 		});

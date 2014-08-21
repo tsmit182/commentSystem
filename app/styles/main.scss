@@ -2,6 +2,12 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+@mixin button {
+  color: white;
+  background-color: black;
+}
+
+
 // Custom Styles
 body {
   background: tomato;
@@ -9,8 +15,38 @@ body {
   color: #333;
 }
 
+.headerLogo {
+  // width: 50%;
+  margin-top: 10px;
+}
+
+.header {
+  background-color: white;
+  padding-left: 75px;
+  padding-bottom: 5px;
+  margin-left: 75px;
+  border-radius: 6px 0px 0px 6px;
+  // margin-top: 5px;
+  // border: 5px;
+  h1{
+    padding-top: 10px;
+  }
+}
+
+.button {
+  @include button;
+}
+
+#videoFind {
+  margin-top: 10px;
+}
+
+#findNewVideo {
+  display: inline;
+}
+
 .hero-unit {
-  margin: 50px auto 50px auto;
+  margin: 25px auto 50px auto;
   width: 600px;
   font-size: 18px;
   font-weight: 200;
@@ -47,4 +83,19 @@ background-color: white;
 
 .commentHolder {
   border: 1px dashed red;
+}
+
+.disappointment {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+.disclaimerCont {
+  margin-top: 20px;
+  line-height: 10px;
+}
+
+.disclaimer {
+  font-size: .85em;
 }
