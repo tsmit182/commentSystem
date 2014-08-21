@@ -11,8 +11,12 @@ $(document).ready(function(){
 			//use RegEx to remove the url before video ID 
 			var truncVidID = urlValue.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
-			var video = collectionInstance.where({videoID: truncVidID});
+			
+			//adding streaming video 
+			$('.vidGoesHere').append("<iframe width='420' height='345' src='http://www.youtube.com/embed/" + truncVidID + "'></iframe>");
 
+			//assigning a variable to be looped over
+			var video = collectionInstance.where({videoID: truncVidID});
 		//loop through `video` array, pull & append comment values:
 			//the loop is going to run for each `i` in the `video` array
 			for (var i in video) {
