@@ -8,17 +8,22 @@ var ThisRouter = Backbone.Router.extend({
 
 //the route in which my search shall go
 	search: function() {
-		$(".searchScreen").show();
-		$(".commentScreen").hide();
+
+		var searchview = new SearchView();
+		console.log('routin to ya search view!');
+
+		// $(".searchScreen").show();
+		// $(".commentScreen").hide();
 	},
 
 //the route in which comments shall go
 	comments: function(id) {
-		$(".commentScreen").show();
-		$(".searchScreen").hide();
+ 
+		var commentsview = new CommentsView({ com_id: id });
+		console.log('routin to ya comments view!');
+		// $(".commentScreen").show();
+		// $(".searchScreen").hide();
 	}
 
 });
 
-//creating an instance of my router
-var route = new ThisRouter();

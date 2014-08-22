@@ -78,8 +78,32 @@ $(document).ready(function(){
 			//use RegEx to remove the url before video ID 
 			var truncVidID = urlValue.replace(/https?:\/\/www.youtube.com\/watch\?v=/, "");
 			//assign a variable to the collection, where the collection's videoID equals the input URL value
-			var video = collectionInstance.where({videoID: truncVidID});
+			
 
+			// if ($('#url_input').val() == ('')) {
+			// 	$('.vidGoesHere').empty();
+			// }
+
+
+			//if a video has already been loaded, remove it from `.vidGoesHere`
+			$('.vidGoesHere').empty();
+			//adding streaming video 
+			$('.vidGoesHere').append("<iframe width='420' height='345' src='http://www.youtube.com/embed/" + truncVidID + "'></iframe>");
+
+			if ($('#url_input').val() === '') {
+				$('.vidGoesHere').empty();
+				$('.commentsRendered').hide();
+				$('#comment_input').hide();
+				$('.comment_submit').hide();
+				$('.vidGoesHere').append("<p class='disappointment'>Looks like you didn't submit a valid URL. Try again?</p>");
+			} else {
+				$('.commentsRendered').show();
+				$('#comment_input').show();
+				$('.comment_submit').show();				
+			}
+
+			//assigning a variable to be looped over
+			var video = collectionInstance.where({videoID: truncVidID});
 		//loop through `video` array, pull & append comment values:
 			//the loop is going to run for each `i` in the `video` array
 			for (var i in video) {
@@ -99,6 +123,7 @@ $(document).ready(function() {
 		$("#findNewVideo").click(function(){
 			//empties `.commentsRendered` div
 			$('.commentsRendered').empty();
+			$('#url_input').val('');
 			//returns user to search route
 			route.search();
 		});

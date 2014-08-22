@@ -1,8 +1,17 @@
-var CommentView = Backbone.View.extend ({
+var CommentsView = Backbone.View.extend({
 
-	template: _.template
+	className: 'searchScreen',
 
-	el: $('.commentScreen'),
+	initialize: function (attrs) {
+		this.options = attrs;
+		this.render();
+	},
 
+	render: function(){
+		console.log("viewin' ya comments view!");
+		var comments = _.template($("#comment_screen").html());
+		var rendered = comments(this.options);
+		$('.hero-unit').html(rendered);
+	}
 
 });
