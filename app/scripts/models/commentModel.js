@@ -27,7 +27,8 @@ var Comment = Backbone.Model.extend({
 var CommentsPage = Backbone.Collection.extend({
 
 	model: Comment,
-	url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtube2"
+	// url:"http://tiy-atl-fe-server.herokuapp.com/collections/youtube2"
+	url:"http://my-little-server.herokuapp.com/collections/firstone"
 
 });
 
