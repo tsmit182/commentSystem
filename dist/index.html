@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>ytc</title>
+    <title>YouRebel, You</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link rel="stylesheet" href="styles/vendor.css">
@@ -16,30 +16,54 @@
   <body>
 
     <!--view for inputting video url-->
+    <div class="header">
+        <img class ="headerLogo" src="images/YouRebel_logo_500px.png">
+        <h4>A platform for anonymously commenting on YouTube videos</h4>
+        <ul>
+            <li><i>Any</i> video- even if comments are disabled!</li>
+            <li>Wow!</li>
+        </ul>
+    </div>
+
     <div class="hero-unit searchScreen">
+<!--         <h1>YouNoob</h1>
+        <p>A forum for anonymously commenting on YouTube videos</p>
+        <ul>
+            <li><i>Any</i> video- even if comments are disabled!</li>
+            <li>Wow!</li>
+
+        </ul> -->
+
         <h3>Upon Which Video Shall You Comment?</h3>
         <br />
-        <p>To choose a forum for a video paste the end of the URL here:</p>
+        <p>To choose a video paste the URL here:</p>
         <!--input video url-->
-         <input id="url_input" type="text" placeholder="example: dQw4w9WgXcQ"/> 
-        <p>(everything after "https://www.youtube.com/watch?v=")</p>
-<!--         <input id="url_input" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
- -->        <input id="videoFind" type="submit" value="Go!">
-
+        <input id="url_input" type="text" placeholder="example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"/> 
+        <br />
+        <input id="videoFind" class= "button" type="submit" value="Go find my video!">
+        <ul class="disclaimerCont">
+            <li class="disclaimer">Currently accepts standard YouTube format (secure):</p>
+            <p class="disclaimer">https://www.youtube.com/watch?v=dQw4w9WgXcQ</p>
+            <li class="disclaimer">standard YouTube format (non-secure):</p>
+            <p class="disclaimer">http://www.youtube.com/watch?v=dQw4w9WgXcQ</p>
+            <li class="disclaimer">and YouTube video IDs:</p>
+            <p class="disclaimer">dQw4w9WgXcQ</p>
+        <ul>
     </div>
 
     <div class="hero-unit commentScreen">
         <!--need to import video title from API-->
-        <p>Choose a different video?</p>
-        <input id="findNewVideo" type="submit" value="Go!">
+        <p>Choose a <input id="findNewVideo" class="button" type="submit" value="different video?"></p>
+        
         <br />
 
+        <!--video will be displayed here-->
         <div class="vidGoesHere"></div>
 
         <br /><br />
         <!--input for comment-->
        <textarea id="comment_input" name="comments" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
-       <input type="submit" class="comment_submit">
+       <input type="submit" class="comment_submit button">
        <br /><br />
 
 
